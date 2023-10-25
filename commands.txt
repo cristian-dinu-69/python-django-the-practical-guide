@@ -70,3 +70,101 @@ $ python manage.py startapp challenges
 
         project: monthly_challenges
             challenges - app (module)
+
+    stop here .
+
+    what are URLs (routes) and Views ?
+
+    a. URLs - routes
+
+    google.com -  this is the root level URL
+    academind/courses/ - this is a general behaviour for any site in the web
+    in building a site we need to plan whic URL we want to support
+    example :
+    
+    main url -  mypage.com/ - shows starting page
+                mypage.com/posts - shows a list of all posts
+                mypage.com/posts/python-is-great - shows a specific post
+
+    URL is also mapping certain actions, things that should happen in a specific URL
+
+    b. Views - are actualy those actions !!!
+        the logic (python code that should be executed for different URLs)(and HTTP methods)
+        the simplest representation of a view is just a function or a (class)
+        that is executed when a request for a certain URL reaches the Django Server.
+        (code that evaluates and handles requests and return responses)
+(Load and prepare data ; Run a logic ; prepare and return response data etc.)
+
+# run the server
+$ python manage.py runserver
+
+# we want to see localhost:8000/challenges/january
+# we go into the challenges folder / views.py and create new views .i.e create a function
+
+user -------> Request  ------->Server(remote machine)
+user <------- Response ------- Server(remote machine)
+                                        ^
+                                        |
+                                    DataBase
+
+            View are responsable to :
+            ----> process *request*
+
+            (parsing the URL, HTTP methods and potentially request data) and 
+
+            <-----create a *response*
+
+
+# def index(request):
+    return  HttpResponse("This Works") # (something : response to send back to the client) - param request - HttpResponse - 
+                                       # need to import:  from django.http import HttpResponse
+                                       # as an argument a respond data that can be a html page or a string
+
+# but nothing happens , django doesn't know when to call it ...
+# we save the views.py and create a new file inside the challenges folder called **urls.py**
+
+# here :
+
+# create a list called urlpatterns
+# in the list we will put all the URLs we want to support and the view function that should be triggered 
+# when a request reaches that url
+
+# we use path(), we need to import it
+
+from django.urls import path
+
+urlpatterns = [
+    path("january",)
+
+]
+
+
+# we use path(), we need to import it - for that we need to import it from views.py
+# from . import views
+# first argument path (url*,function index)
+
+# if a request reaches /january then execute the function index
+
+# but this is not enought ---until now we created a URLconfig
+
+# this is done only in the challenges module (app) of the monthly_challenges project
+
+# we need to connect this app to the entire project
+
+# we go into the monthly_challegies/urls.py
+
+# there we have already urlpatterns list, and already a path ...admin
+
+# add here in the list , but the url is not pointing to the app challenges only ...and I want to 
+
+# load all the urls defined for challenges app
+
+# we can do this with another function .. include..
+# that we need to import it ..
+
+# from django.urls import include
+# path("challenges",include("challenges.urls"))
+
+# don't forget to save all files
+
+# stop here
