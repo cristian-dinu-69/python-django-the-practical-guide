@@ -1,3 +1,5 @@
+1. start
+
 # starting local development server 
 $ python manage.py runserver
 
@@ -50,3 +52,21 @@ $ python manage.py startapp challenges
         This is a super important file,
         and we are going to dive into this file
         and how to wire up this challenges app with our project,]
+
+
+        1. end
+
+        ################################################################################################
+
+        2. start
+
+
+    $ django-admin startproject monthly_challenges
+    $ cd monthly_challenges
+    $ python manage.py startapp challenges
+    
+
+        created new project monthly_challenges with the app challenges
+
+        project: monthly_challenges
+            challenges - app (module)
