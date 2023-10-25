@@ -31,3 +31,22 @@ $ python manage.py startapp challenges
             Admin_Area
 
     stop here for commit 
+
+    # in challenges we have migration folder (empty = only __init__.py)
+
+    challenges
+        migrations
+            __init__.py
+        admin.py - building adminstration area
+        apps.py - not important for the moment - actualy configures the challenge app
+        models.py - important when we work with DB
+        tests.py - important when we want to test
+        views.py - important ! will start in next course section
+
+        [   Because that is where we actually will write some logic
+        for determining what we want to show to the users
+        to the visitors on our website. 
+        
+        This is a super important file,
+        and we are going to dive into this file
+        and how to wire up this challenges app with our project,]
