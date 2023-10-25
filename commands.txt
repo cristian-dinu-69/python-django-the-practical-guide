@@ -1,2 +1,33 @@
 # starting local development server 
-python manage.py runserver
+$ python manage.py runserver
+
+# create new app in django project
+$ python manage.py startapp challenges
+
+    directory challenges appears under mypage, with a lot of subdirectories, actually is an app or module
+
+    projects
+        mypage - django project
+            challenges - individual app (app1), apps are the building blocks of the overall project -> app ~ module
+            (app2)
+            (app3)
+            mypage - settings.py - contains the project configuration
+
+    Examaple :
+
+    projects 
+        google (with apps): 
+            google_search app (module), 
+            google_maps app (module), 
+            google_images app (module)
+        amazon :
+            amazon_video (prime)
+            amazon_shop
+            amazon_music
+
+        my_online_shop:
+            Products
+            Cart
+            Admin_Area
+
+    stop here for commit 
