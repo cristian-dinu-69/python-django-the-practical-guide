@@ -188,3 +188,33 @@ urlpatterns = [
 
 ]
 
+works
+
+change :
+challenges/urls.py
+
+urlpatterns = [
+    path("<month>",views.monthly_challege),
+   
+]
+
+and challenge/views.py
+
+def monthly_challege(request, month):
+    challenge_text = None
+    if month == "january":
+        challenge_text = " Jan - Eat no meat entire month!"
+    elif month == "february":
+        challenge_text = "Feb - Run 20 mins every day entire month"
+    elif month == "march":
+        challenge_text = "March - Learn Django 20 mins every day entire month"
+    else :
+    # from django.http import HttpResponseNotFound
+        return HttpResponseNotFound("Month Not Supported")
+    return HttpResponse(challenge_text)
+
+works!!
+
+
+
+
